@@ -1,3 +1,7 @@
+.next/
+.vscode/
+.idea/
+
 # Logs
 logs
 *.log
