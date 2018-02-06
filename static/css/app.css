@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+/* ------ Header ------- */
+.main-nav > ul {
+    overflow: hidden;
+    list-style-type: none;
+    margin-right: 100px;
+}
+.main-nav li {
+    float: right;
+}
+.main-nav li a {
+    display: block;
+    padding: 15px;
+    margin: 0 5px;
+    text-decoration: none;
+}
+.main-nav > ul > li a:hover {
+    border-bottom: 3px solid #21ce99;
+}
+.main-nav > ul > li a:visited {
+    color: black;
+}
+
+/* ------ CardBar ------ */
+.card-bar {
+    width: 80%;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.card-bar__image img {
+    height: 150px;
+    width: 200px;
+}
+
+
+

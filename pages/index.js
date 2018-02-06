@@ -1,10 +1,11 @@
 import Layout from '../components/Layout'
+import CardBar from '../components/CardBar'
 import fetch from 'isomorphic-unfetch'
 
 const Index = (props) => (
   <Layout>
     {Object.keys(props.cards).map((card) => (
-      <LandingCard cards={props.cards} />
+      <CardBar card={props.cards[card]}/>
     ))}
   </Layout>
 )
