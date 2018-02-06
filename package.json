@@ -1,0 +1,28 @@
+{
+  "name": "verbose-carnival",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "next": "^5.0.0",
+    "node-fetch": "^2.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stripedpajamas/verbose-carnival.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stripedpajamas/verbose-carnival/issues"
+  },
+  "homepage": "https://github.com/stripedpajamas/verbose-carnival#readme"
+}
