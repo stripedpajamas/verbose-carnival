@@ -19,8 +19,6 @@ Index.getInitialProps = async function() {
   const res = await fetch('https://techcase-cards-api.herokuapp.com/api/v1/cards')
   const data = await res.json()
 
-  console.log(`Show data fetched. Count: ${Object.keys(data).length}`)
-
   return {
     cards: data
   }
