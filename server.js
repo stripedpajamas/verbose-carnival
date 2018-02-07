@@ -9,6 +9,11 @@ app.prepare()
   .then(() => {
     const server = express()
 
+    server.get('/api/creditCheck', (req, res) => {
+      const creditScore = Math.floor(Math.random() * (850 - 390 + 1)) + 390
+      res.send({ creditScore })
+    })
+
     server.get('*', (req, res) => {
       return handle(req, res)
     })

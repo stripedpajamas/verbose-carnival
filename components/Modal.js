@@ -2,8 +2,6 @@ import React from 'react'
 
 export default () => (
   <div>
-    <form>
-      Hello
-    </form>
+    This is the modal
   </div>
 );

@@ -14,7 +14,7 @@ export default (props) => (
       </div>
     </div>
     <div className="card-bar__buttons">
-      <Link href="/apply"><a class="button">Apply</a></Link>
+      <Link href="/apply"><a className="button">Apply</a></Link>
     </div>
   </div>
 );
