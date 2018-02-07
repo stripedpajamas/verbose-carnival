@@ -1,9 +1,8 @@
 import React from 'react';
-import Apply from '../pages/apply'
+
 
 //create objects here
-
-
+const statesArr = [];
 
 export default () => (
     <form class="apply-form">
@@ -83,15 +82,15 @@ export default () => (
         </div>
         <div class="flex-container">
             <div>Zipcode</div>
-            <div><input class="apply-zipcode" type="text" id="zipcode" name="zipcode" required /></div>
+            <div><input class="apply-zipcode" type="text" pattern="[0-9]{5}" id="zipcode" name="zipcode"  title="Please enter 5-digits zipcode"required /></div>
         </div>
         <div class="flex-container">
             <div>SSN</div>
-            <div><input class="input-item" type="password" id="ssn" name="ssn" maxlength="9" required />
+            <div><input class="input-item" type="password" pattern="[0-9]{9}" id="ssn" name="ssn" maxlength="9" title="Please enter 9-digits SSN" required />
             </div>
         </div>
         <center>
-            <button class="apply-button">APPLY</button>
+            <button class="apply-button">APPLY NOW</button>
         </center>
     </form >
 )

@@ -171,9 +171,10 @@ footer {
     color: white;
     padding: 15px 32px;
     margin: 15px;
-    text-align: center;
-    display: inline-block;
     font-size: 16px;
+}
+.apply-button:hover {
+    background-color: #167e5f;
 }
 
 .apply-form {
@@ -199,19 +200,8 @@ footer {
 .apply-zipcode {
     width: 100px;
     height: 30px;
+    font-size: 16px;
 }
-.divTable{
-	display: table;
-	width: 100%;
-}
-.divTableRow {
-    display: table-row;
-}
-.divTableCell, .divTableHead {
-    display: table-cell;
-    padding: 3px 10px;
-}
-
 .flex-container {
     display: flex;
     flex-wrap: wrap;
