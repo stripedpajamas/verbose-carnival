@@ -13,7 +13,7 @@ class Index extends Component {
       showModal: false
     }
 
-    this.handleFindButton = this.handleFindButton.bind(this)
+    this.handleModalButton = this.handleModalButton.bind(this)
   }
   
   static async getInitialProps() {
@@ -25,21 +25,21 @@ class Index extends Component {
     }
   }
 
-  handleFindButton() {
+  handleModalButton() {
     this.setState((prevState) => ({ showModal: !prevState.showModal }))
   }
 
   render() {
     return (
       <Layout>
-        <Hero handleFindButton={this.handleFindButton} />
+        <Hero handleModalButton={this.handleModalButton} />
         {this.state.showModal && 
-          <Modal />
+          <Modal handleModalButton={this.handleModalButton}/>
         }
         <div className="cards-section">
           <h2 className="header2">Explore Cards</h2>
-          {Object.keys(this.props.cards).map((card, idx) => (
-            <CardBar key={idx} card={this.props.cards[card]} />
+          {Object.keys(this.props.cards).map((card) => (
+            <CardBar key={card.id} card={this.props.cards[card]} />
           ))}
         </div>
       </Layout>
