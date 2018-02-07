@@ -1,10 +1,40 @@
+/* ------ GLOBAL ------ */
 * {
     margin: 0;
     padding: 0;
     font-family: 'Lato', sans-serif;
 }
+.header2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* ------ Buttons ------ */
+.button {
+    border-radius: 3px;
+    color: white;
+    background-color: #FFD54F;
+}
+
+.button:hover {
+    background-color: #FFC107;
+}
 
 /* ------ Header ------- */
+#nav {
+    background-color:  #FFD54F;
+}
+#nav > h1 {
+    margin-left: 30px;
+    position: relative;
+    top: 8px;
+    float:left;
+    vertical-align: middle;
+}
+.main-nav {
+    float: right;
+}
 .main-nav > ul {
     overflow: hidden;
     list-style-type: none;
@@ -16,24 +46,48 @@
 }
 .main-nav li a {
     display: block;
-    padding: 15px;
+    padding: 20px;
     margin: 0 5px;
     text-decoration: none;
 }
 .main-nav > ul > li a:hover {
-    border-bottom: 3px solid #FFD54F;
+    background-color: #FFC107;
 }
 .main-nav > ul > li a:visited {
     color: black;
 }
-
-.main-nav img {
-    height: 100px;
-    float: left;
-    color: blue;
-
+.clear {
+    clear: both;
 }
-
+/* ------ Hero ------ */
+.hero {
+    height: 750px;
+    width: 80%;
+    margin: 0 auto 50px auto;
+    border-bottom: 1px solid #FFD54F;
+}
+.hero > img {
+    display: block;
+    position: relative;
+    top: 60px;
+    margin: 0 auto;
+}
+#find-card {
+    border: none;
+    font-size: 20px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    top: 160px;
+    padding: 20px 50px;
+}
+.hero > p {
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    top: 80px;
+}
 /* ------ CardBar ------ */
 .card-bar {
     width: 80%;
@@ -61,25 +115,18 @@
 }
 
 .card-bar__buttons a {
-    background-color: #FFD54F;
-    border-radius: 3px;
-    color: white;
     padding: 12px 40px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
     line-height: 150px;
 }
-.card-bar__buttons a:hover {
-    background-color: #FFC107;
-    color: white;
-}
 
 .card-bar__buttons a:visited {
     color: white;
 }
 
-/* ------ footer ------ */
+/* ------ Footer ------ */
 footer {
     height: 400px;
     background-color: #BDBDBD;
