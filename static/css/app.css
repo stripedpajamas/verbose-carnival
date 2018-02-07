@@ -9,6 +9,7 @@
     overflow: hidden;
     list-style-type: none;
     margin-right: 100px;
+    float: right;
 }
 .main-nav li {
     float: right;
@@ -20,24 +21,68 @@
     text-decoration: none;
 }
 .main-nav > ul > li a:hover {
-    border-bottom: 3px solid #21ce99;
+    border-bottom: 3px solid #FFD54F;
 }
 .main-nav > ul > li a:visited {
     color: black;
 }
 
+.main-nav img {
+    height: 100px;
+    float: left;
+    color: blue;
+
+}
+
 /* ------ CardBar ------ */
 .card-bar {
     width: 80%;
-    border: 1px solid black;
-    display: grid;
-    grid-template-columns: auto auto auto;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    padding: 10px 20px;
+    box-shadow: 1px 1px 7px 0px #999;
+    display: flex;
+    flex-direction: row;
 }
 
 .card-bar__image img {
     height: 150px;
-    width: 200px;
+    width: 255px;
 }
 
+.card-bar__features {
+    margin-left: 10px;
+    width: 60%;
+}
+
+.card-bar__buttons {
+    width: 20%;
+    text-align: center;
+}
+
+.card-bar__buttons a {
+    background-color: #FFD54F;
+    border-radius: 3px;
+    color: white;
+    padding: 12px 40px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 150px;
+}
+.card-bar__buttons a:hover {
+    background-color: #FFC107;
+    color: white;
+}
+
+.card-bar__buttons a:visited {
+    color: white;
+}
+
+/* ------ footer ------ */
+footer {
+    height: 400px;
+    background-color: #BDBDBD;
+}
 
 

@@ -1,11 +1,20 @@
 import Link from 'next/link';
 
 export default (props) => (
-  <div class="card-bar">
-    <div class="card-bar__image">
+  <div className="card-bar">
+    <div className="card-bar__image">
       <img src={props.card.image} />
     </div>
-    <div lass="card-bar__features">{props.card.regular_apr.rate}</div>
-    <div class="card-bar__buttons">3</div>
+    <div className="card-bar__features">
+      <div>
+        <h3>{props.card.merchant}</h3>
+        <h4>{props.card.name}</h4>
+        <p>{props.card.features[0]}</p>
+        <Link href="#"><a>Learn More</a></Link>
+      </div>
+    </div>
+    <div className="card-bar__buttons">
+      <Link href="#"><a>Apply</a></Link>
+    </div>
   </div>
 );

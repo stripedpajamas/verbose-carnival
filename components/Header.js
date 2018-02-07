@@ -1,8 +1,9 @@
 import Link from 'next/link'
 
 export default () => (
-  <nav class="main-nav">
+  <nav className="main-nav">
     <ul>
+      <li>CardsOnline</li>
       <li><Link href="/about"><a>About</a></Link></li>
       <li><Link href="/"><a>Home</a></Link></li>
     </ul>
