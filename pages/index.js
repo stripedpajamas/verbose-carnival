@@ -1,4 +1,18 @@
 import Layout from '../components/Layout'
+<<<<<<< HEAD
+import fetch from 'isomorphic-unfetch'
+import ApplyForm from '../components/ApplyForm'
+
+const Index = (props) => (
+  <Layout>
+    <p>
+      some stuff goes here
+   </p>
+  </Layout>
+)
+
+Index.getInitialProps = async function () {
+=======
 import CardBar from '../components/CardBar'
 import fetch from 'isomorphic-unfetch'
 
@@ -11,6 +25,7 @@ const Index = (props) => (
 )
 
 Index.getInitialProps = async function() {
+>>>>>>> d755afdb5a040907411690306b3d93f50536039a
   const res = await fetch('https://techcase-cards-api.herokuapp.com/api/v1/cards')
   const data = await res.json()
 
