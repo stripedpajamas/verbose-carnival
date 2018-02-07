@@ -6,10 +6,12 @@ import fetch from 'isomorphic-unfetch'
 const Index = (props) => (
   <Layout>
     <Hero />
-    <h2 class="header2">Explore Cards</h2>
-    {Object.keys(props.cards).map((card) => (
-      <CardBar card={props.cards[card]}/>
-    ))}
+    <div class="cards-section">
+      <h2 class="header2">Explore Cards</h2>
+      {Object.keys(props.cards).map((card) => (
+        <CardBar card={props.cards[card]}/>
+      ))}
+    </div>
   </Layout>
 )
 

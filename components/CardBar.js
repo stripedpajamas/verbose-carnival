@@ -10,7 +10,7 @@ export default (props) => (
         <h3>{props.card.merchant}</h3>
         <h4>{props.card.name}</h4>
         <p>{props.card.features[0]}</p>
-        <Link href="#"><a>Learn More</a></Link>
+        <Link href={`/card?id=${props.card.id}`}><a>Learn More</a></Link>
       </div>
     </div>
     <div className="card-bar__buttons">
