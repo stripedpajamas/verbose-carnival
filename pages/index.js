@@ -1,13 +1,18 @@
 import Layout from '../components/Layout'
 import CardBar from '../components/CardBar'
+import Hero from '../components/Hero'
 import fetch from 'isomorphic-unfetch'
 import Apply from '../components/ApplyForm'
 
 const Index = (props) => (
   <Layout>
-    {Object.keys(props.cards).map((card) => (
-      <CardBar card={props.cards[card]}/>
-    ))}
+    <Hero />
+    <div class="cards-section">
+      <h2 class="header2">Explore Cards</h2>
+      {Object.keys(props.cards).map((card) => (
+        <CardBar card={props.cards[card]}/>
+      ))}
+    </div>
   </Layout>
 )
 
