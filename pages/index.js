@@ -2,6 +2,7 @@ import Layout from '../components/Layout'
 import CardBar from '../components/CardBar'
 import Hero from '../components/Hero'
 import fetch from 'isomorphic-unfetch'
+import Apply from '../components/ApplyForm'
 
 const Index = (props) => (
   <Layout>
