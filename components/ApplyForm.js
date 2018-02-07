@@ -2,7 +2,7 @@ import React from 'react';
 import Apply from '../pages/apply'
 
 export default () => (
-    <form>
+    <form class="apply-form">
         <div class="divTable">
             <div class="divTableBody">
                 <div class="divTableRow">
