@@ -235,16 +235,16 @@ footer {
 /* --------------- Apply --------------- */
 .apply-button {
     background-color: #21ce99; /* Green */
-    border: none;
     color: white;
     padding: 15px 32px;
+    margin: 15px;
     text-align: center;
     display: inline-block;
     font-size: 16px;
 }
 
 .apply-form {
-    width: 700px;
+    width: 500px;
     min-height: 500px;
     height: auto;
     border-radius: 5px;
@@ -255,9 +255,17 @@ footer {
 }
 
 .input-item {
-    width: 320px;
+    width: 300px;
     height: 30px;
     font-size: 16px;
+}
+.apply-states {
+    margin: 10px;
+    line-height: 25px;
+}
+.apply-zipcode {
+    width: 100px;
+    height: 30px;
 }
 .divTable{
 	display: table;
@@ -269,4 +277,17 @@ footer {
 .divTableCell, .divTableHead {
     display: table-cell;
     padding: 3px 10px;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+  
+.flex-container > div {
+    width: 100px;
+    margin: 10px;
+    text-align: right;
+    line-height: 25px;
+    font-size: 16px;
 }
