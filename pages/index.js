@@ -1,9 +1,6 @@
 import Layout from '../components/Layout'
-<<<<<<< HEAD
-=======
 import CardBar from '../components/CardBar'
 import Hero from '../components/Hero'
->>>>>>> feature/landing-card-bars
 import fetch from 'isomorphic-unfetch'
 
 const Index = (props) => (
