@@ -234,30 +234,28 @@ footer {
 }
 /* --------------- Apply --------------- */
 .apply-button {
-    background-color: #21ce99; /* Green */
-    color: white;
-    padding: 15px 32px;
-    margin: 15px;
+    padding: 15px 50px;
+    margin: 20px 0;
     font-size: 16px;
-}
-.apply-button:hover {
-    background-color: #167e5f;
+    border: none;
 }
 
 .apply-form {
-    width: 500px;
+    background-color: #FAFAFA;
+    width: 50%;
     min-height: 500px;
     height: auto;
     border-radius: 5px;
-    margin: 2% auto;
+    margin: 50px auto;
     box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
-    padding: 2%;
-    background-image: linear-gradient(180deg, #82abed 20%, #ffffff 80%);
+    padding: 10px;
 }
 
 .input-item {
+    border: none;
     width: 300px;
     height: 30px;
+    padding: 5px;
     font-size: 16px;
 }
 .apply-states {
@@ -280,4 +278,5 @@ footer {
     text-align: right;
     line-height: 25px;
     font-size: 16px;
+    display: inline-block;
 }
