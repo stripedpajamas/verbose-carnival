@@ -242,13 +242,18 @@ footer {
 
 .apply-form {
     background-color: #FAFAFA;
-    width: 50%;
+    width: 800px;
     min-height: 500px;
     height: auto;
     border-radius: 5px;
     margin: 50px auto;
     box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
     padding: 10px;
+}
+
+.flex-container {
+    width: 60%;
+    margin: 0 auto;
 }
 
 .input-item {
@@ -279,4 +284,18 @@ footer {
     line-height: 25px;
     font-size: 16px;
     display: inline-block;
+}
+
+/* --------------- Apply Card ---------------- */
+.container {
+    text-align: center;
+}
+#apply-card-header {
+    margin: 45px 0;
+    text-align: center;
+}
+
+#apply-card-image {
+    width: 250px;
+    height: 160px;
 }
