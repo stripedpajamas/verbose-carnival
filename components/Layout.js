@@ -10,7 +10,7 @@ export default (props) => (
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     </Head>
     <Header />
-      {props.children}
+      <section className="main">{props.children}</section>
     <Footer />  
   </div>
 )
