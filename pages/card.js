@@ -10,10 +10,9 @@ const Cards = (props) => (
 )
 
 Cards.getInitialProps = async (context) => {
-  const res = await fetch('https://techcase-cards-api.herokuapp.com/api/v1/cards')
+  const res = await fetch(`https://techcase-cards-api.herokuapp.com/api/v1/cards/${context.query.id}`)
   const data = await res.json()
-  const card = data.find(card => card.id === context.query.id)
-  return { card }
+  return { card: data.card }
 }
 
 export default Cards

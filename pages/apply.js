@@ -12,9 +12,9 @@ export default class Apply extends Component {
   }
 
   static async getInitialProps (context) {
-    const res = await fetch('https://techcase-cards-api.herokuapp.com/api/v1/cards')
+    const res = await fetch(`https://techcase-cards-api.herokuapp.com/api/v1/cards/${context.query.id}`)
     const data = await res.json()
-    const card = data.find(card => card.id === context.query.id)
+    const card = data.card
 
     let lowestRecommendedScore = 850
     card.recommended_credit_scores.forEach((group) => {

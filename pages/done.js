@@ -10,14 +10,14 @@ const Done = (props) => (
 )
 
 Done.getInitialProps = async (context) => {
-  const appliedCardId = context.url.query.id
-  const qualified = context.url.query.qualified
+  const appliedCardId = context.query.id
+  const qualified = context.query.qualified
 
   const res = await fetch('https://techcase-cards-api.herokuapp.com/api/v1/cards')
   const data = await res.json()
 
   return {
-    appliedCard: data[appliedCardId],
+    appliedCard: data.find(card => card.id === appliedCardId),
     cards: data,
     qualified
   }
