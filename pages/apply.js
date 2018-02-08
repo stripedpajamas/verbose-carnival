@@ -12,7 +12,7 @@ export default class Apply extends Component {
   }
 
   static async getInitialProps (context) {
-    const id = parseInt(context.query.id, 10)
+    const id = context.query.id
     const res = await fetch(`https://techcase-cards-api.herokuapp.com/api/v1/cards/${id}`)
     const data = await res.json()
     const card = data.card
@@ -33,7 +33,10 @@ export default class Apply extends Component {
     const creditScoreRes = await res.json()
     const creditScore = creditScoreRes.creditScore
     const qualified = creditScore >= this.props.lowestRecommendedScore
-    Router.push(`/done?qualified=${qualified}&creditScore=${creditScore}&id=${this.props.card.id}`, '/complete')
+    const name = `${formData.firstName} ${formData.lastName}`
+    const id = this.props.card.id
+    Router.push(`/done?qualified=${qualified}&creditScore=${creditScore}&id=${id}&name=${name}`,
+      '/complete')
   }
 
   render () {
