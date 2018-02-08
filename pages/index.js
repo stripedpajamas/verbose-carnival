@@ -39,7 +39,7 @@ class Index extends Component {
         <div className="cards-section">
           <h2 className="header2">Explore Cards</h2>
           {Object.keys(this.props.cards).map((card) => (
-            <CardBar key={card.id} card={this.props.cards[card]} />
+            <CardBar key={this.props.cards[card].id} card={this.props.cards[card]} />
           ))}
         </div>
       </Layout>
