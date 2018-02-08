@@ -35,7 +35,7 @@ export default class ApplyForm extends Component {
     return (
       <form className="apply-form">
         <div className="flex-container">
-          <div>First Name</div>
+          <div className="control-label">First Name</div>
           <div>
             <input
               onChange={this.handleInputChange}
@@ -48,7 +48,7 @@ export default class ApplyForm extends Component {
           </div>
         </div>
         <div className="flex-container">
-          <div>Last Name</div>
+          <div className="control-label">Last Name</div>
           <div>
             <input
               onChange={this.handleInputChange}
@@ -61,7 +61,7 @@ export default class ApplyForm extends Component {
           </div>
         </div>
         <div className="flex-container">
-          <div>Address</div>
+          <div className="control-label">Address</div>
           <div>
             <input
               onChange={this.handleInputChange}
@@ -75,7 +75,7 @@ export default class ApplyForm extends Component {
         </div>
 
         <div className="flex-container">
-          <div>City</div>
+          <div className="control-label">City</div>
           <div>
             <input
               onChange={this.handleInputChange}
@@ -89,7 +89,7 @@ export default class ApplyForm extends Component {
         </div>
 
         <div className="flex-container">
-          <div>States</div>
+          <div className="control-label">States</div>
           <select
             onChange={this.handleInputChange}
             value={this.state.state}
@@ -150,7 +150,7 @@ export default class ApplyForm extends Component {
           </select>
         </div>
         <div className="flex-container">
-          <div>Zipcode</div>
+          <div className="control-label">Zipcode</div>
           <div>
             <input
               onChange={this.handleInputChange}
@@ -166,7 +166,7 @@ export default class ApplyForm extends Component {
           </div>
         </div>
         <div className="flex-container">
-          <div>SSN</div>
+          <div className="control-label">SSN</div>
           <div>
             <input
               onChange={this.handleInputChange}

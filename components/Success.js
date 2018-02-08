@@ -1,3 +1,7 @@
+import Layout from '../components/Layout'
+
 export default (props) => (
-  <div>Success!</div>
+  <Layout>
+    <div>Success!{props.appliedCard}</div>
+  </Layout>
 )

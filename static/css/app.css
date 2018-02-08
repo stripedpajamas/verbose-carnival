@@ -77,6 +77,16 @@ a {
 .clear {
     clear: both;
 }
+
+#header-link {
+    color: white;
+    font-size: 24px;
+    margin-left: 50px;
+    position: relative;
+    top: 20px;
+    float:left;
+    vertical-align: middle;
+}
 /* --------------- Hero --------------- */
 .hero {
     width: 100%;
@@ -266,11 +276,6 @@ footer {
 .apply-states {
     margin: 10px;
     line-height: 25px;
-}
-.apply-zipcode {
-    width: 100px;
-    height: 30px;
-    font-size: 16px;
 }
 .flex-container {
     display: flex;
