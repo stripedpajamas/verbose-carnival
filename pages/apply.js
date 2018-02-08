@@ -12,7 +12,8 @@ export default class Apply extends Component {
   }
 
   static async getInitialProps (context) {
-    const res = await fetch(`https://techcase-cards-api.herokuapp.com/api/v1/cards/${context.query.id}`)
+    const id = JSON.parse(context.query.id)
+    const res = await fetch(`https://techcase-cards-api.herokuapp.com/api/v1/cards/${id}`)
     const data = await res.json()
     const card = data.card
 
