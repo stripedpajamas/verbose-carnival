@@ -1,12 +1,13 @@
 import fetch from 'isomorphic-unfetch'
+import Layout from '../components/Layout'
 import Success from '../components/Success'
 import Failure from '../components/Failure'
 
 const Done = (props) => (
-  <div>
-    {props.qualified && <Success card={props.appliedCard} name={props.name} />}
-    {!props.qualified && <Failure card={props.appliedCard} cards={props.possibleCards} name={props.name} />}
-  </div>
+  <Layout>
+    {props.qualified && <Success card={props.appliedCard} />}
+    {!props.qualified && <Failure card={props.appliedCard} cards={props.possibleCards} />}
+  </Layout>
 )
 
 Done.getInitialProps = async (context) => {
