@@ -9,7 +9,8 @@ class Index extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      showModal: false
+      showModal: false,
+      filteredCards: props.cards
     }
 
     this.handleModalButton = this.handleModalButton.bind(this)
@@ -28,16 +29,23 @@ class Index extends Component {
     this.setState((prevState) => ({ showModal: !prevState.showModal }))
   }
 
+  handleModalSubmission (results) {
+    // turn results into a filtered list of cards
+  }
+
   render () {
     return (
       <Layout>
         <Hero handleModalButton={this.handleModalButton} />
         {this.state.showModal &&
-          <Modal handleModalButton={this.handleModalButton} />
+          <Modal
+            handleModalButton={this.handleModalButton}
+            handleModalSubmission={this.handleModalSubmission}
+          />
         }
         <div className='cards-section'>
           <h2 className='header2'>Explore Cards</h2>
-          {this.props.cards.map((card) => (
+          {this.state.filteredCards.map((card) => (
             <CardBar key={card.id} card={card} />
           ))}
         </div>

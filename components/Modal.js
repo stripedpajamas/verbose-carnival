@@ -4,55 +4,64 @@ class Modal extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      selectedOption: 'option1',
+      estimatedCredit: 'good',
+      apr: false,
+      travel: false,
+      cashback: false
     }
 
+    this.handleSubmitButton = this.handleSubmitButton.bind(this)
     this.handleOptionChange = this.handleOptionChange.bind(this)
   }
 
-  handleOptionChange (event) {
-    this.setState({ selectedOption: event.target.value })
+  handleOptionChange (e) {
+    this.setState({ selectedOption: e.target.value })
+  }
+
+  handleSubmitButton () {
+    const results = Object.assign({}, this.state)
+    this.props.handleModalSubmission(results)
   }
 
   render () {
     return (
-      <div className="modal">
-        <i className="material-icons" onClick={this.props.handleModalButton}>clear</i>
-        <div id="modal-content">
-          <div className="rewards">
+      <div className='modal'>
+        <i className='material-icons' onClick={this.props.handleModalButton}>clear</i>
+        <div id='modal-content'>
+          <div className='rewards'>
             <p>What type of reward(s) are you interested in?</p>
             <ul>
               <li >
-                <input id="apr-checkbox" type="checkbox"></input>
-                <label for="apr">0% Intro APR</label>
+                <input id='apr' type='checkbox' value={this.state.apr} />
+                <label htmlFor='apr'>0% Intro APR</label>
               </li>
               <li>
-                <input id="travel-checkbox" type="checkbox"></input>
-                <label for="travel">Travel and Airlines</label>
+                <input id='travel' type='checkbox' value={this.state.travel} />
+                <label htmlFor='travel'>Travel and Airlines</label>
               </li>
               <li>
-                <input id="cash-checkbox" type="checkbox"></input>
-                <label for="cashback">Cash Back</label>
+                <input id='cashback' type='checkbox' value={this.state.cashback} />
+                <label htmlFor='cashback'>Cash Back</label>
               </li>
             </ul>
           </div>
-          <div className="credit-question">
+          <div className='credit-question'>
             <p>What do you think your credit score is?</p>
-            <input type="radio" name="low" value="option1"
-              checked={this.state.selectedOption === 'option1'} onChange={this.handleOptionChange} />
-            <label for="low">Low</label>
-            <input type="radio" name="medium" value="option2"
-              checked={this.state.selectedOption === 'option2'} onChange={this.handleOptionChange} />
-            <label for="medium">Medium</label>
-            <input type="radio" name="high" value="option3"
-              checked={this.state.selectedOption === 'option3'} onChange={this.handleOptionChange} />
-            <label for="high">Good</label>
-            <input type="radio" name="excellent" value="option4"
-              checked={this.state.selectedOption === 'option4'} onChange={this.handleOptionChange} />
-            <label for="excellent">Excellent</label>
+            <input type='radio' name='low' value='low'
+              checked={this.state.selectedOption === 'low'} onChange={this.handleOptionChange} />
+            <label htmlFor='low'>Low</label>
+            <input type='radio' name='medium' value='medium'
+              checked={this.state.selectedOption === 'medium'} onChange={this.handleOptionChange} />
+            <label htmlFor='medium'>Medium</label>
+            <input type='radio' name='high' value='high'
+              checked={this.state.selectedOption === 'high'} onChange={this.handleOptionChange} />
+            <label htmlFor='high'>Good</label>
+            <input type='radio' name='excellent' value='excellent'
+              checked={this.state.selectedOption === 'excellent'} onChange={this.handleOptionChange} />
+            <label htmlFor='excellent'>Excellent</label>
           </div>
           <center>
-            <button className="button apply-button">
+            <button className='button apply-button' onClick={this.handleSubmitButton}>
               SUBMIT
           </button>
           </center>
