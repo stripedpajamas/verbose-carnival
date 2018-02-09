@@ -24,7 +24,7 @@ class Modal extends Component {
             <ul>
               <li >
                 <input id="apr-checkbox" type="checkbox"></input>
-                <label for="apr">0% APR</label>
+                <label for="apr">0% Intro APR</label>
               </li>
               <li>
                 <input id="travel-checkbox" type="checkbox"></input>
@@ -33,10 +33,6 @@ class Modal extends Component {
               <li>
                 <input id="cash-checkbox" type="checkbox"></input>
                 <label for="cashback">Cash Back</label>
-              </li>
-              <li>
-                <input id="bonus-checkbox" type="checkbox"></input>
-                <label for="bonusmiles">Gas</label>
               </li>
             </ul>
           </div>
