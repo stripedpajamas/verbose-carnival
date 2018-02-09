@@ -133,6 +133,26 @@ a {
     border: 1px solid black;
     margin: 5% auto 0 auto;
 }
+
+.rewards {
+  padding: 10px;
+  font-size: 24px;
+}
+.credit-question{
+  padding: 20px;
+  font-size: 24px;
+}
+.credit-question label {
+  padding: 10px;
+}
+.rewards ul {
+  list-style-type: none;
+  padding: 10px;
+ }
+.rewards li {
+  margin-bottom: 10px;
+  font-size: 24px;  
+}
 /* --------------- CardBar --------------- */
 .cards-section {
     background-color: #FAFAFA;
