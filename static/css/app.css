@@ -130,7 +130,6 @@ a {
 #modal-content {
     width: 60%;
     height: 80%;
-    border: 1px solid black;
     margin: 5% auto 0 auto;
 }
 
@@ -323,4 +322,28 @@ footer {
 #apply-card-image {
     width: 250px;
     height: 160px;
+}
+
+/* --------------- Success --------------- */
+.success {
+    text-align: center;
+}
+.success > h1 {
+    margin: 50px;
+    color: green;
+}
+
+.success > p {
+    margin-bottom: 200px;
+}
+
+/* --------------- Failure --------------- */
+.fail > h1 {
+    color: red;
+    margin: 100px 0;
+    text-align: center;
+}
+
+.fail > p {
+
 }

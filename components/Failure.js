@@ -2,11 +2,10 @@ import Layout from '../components/Layout'
 import CardBar from '../components/CardBar'
 
 export default (props) => (
-  <div>
-    <div>Sorry! Your credit score prevents you from qualifying for the {props.card.name} card.</div>
-    <p>Try these cards instead:</p>
+  <div className="fail">
+    <h1>Sorry! Your credit score prevents you from qualifying for the {props.card.name} card.</h1>
     <div className='cards-section'>
-      <h2 className='header2'>Explore Cards</h2>
+      <h2 className='header2'>Try {props.cards.length > 1 ? 'these cards' : 'this card'} instead ...</h2>
       {props.cards.map((card) => (
         <CardBar key={card.id} card={card} />
       ))}
