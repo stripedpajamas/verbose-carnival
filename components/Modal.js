@@ -15,7 +15,7 @@ class Modal extends Component {
   }
 
   handleOptionChange (e) {
-    this.setState({ selectedOption: e.target.value })
+    this.setState({ estimatedCredit: e.target.value })
   }
 
   handleSubmitButton () {
@@ -48,16 +48,16 @@ class Modal extends Component {
           <div className='credit-question'>
             <p>What do you think your credit score is?</p>
             <input type='radio' name='low' value='low'
-              checked={this.state.selectedOption === 'low'} onChange={this.handleOptionChange} />
+              checked={this.state.estimatedCredit === 'low'} onChange={this.handleOptionChange} />
             <label htmlFor='low'>Low</label>
             <input type='radio' name='medium' value='medium'
-              checked={this.state.selectedOption === 'medium'} onChange={this.handleOptionChange} />
+              checked={this.state.estimatedCredit === 'medium'} onChange={this.handleOptionChange} />
             <label htmlFor='medium'>Medium</label>
             <input type='radio' name='high' value='high'
-              checked={this.state.selectedOption === 'high'} onChange={this.handleOptionChange} />
+              checked={this.state.estimatedCredit === 'high'} onChange={this.handleOptionChange} />
             <label htmlFor='high'>Good</label>
             <input type='radio' name='excellent' value='excellent'
-              checked={this.state.selectedOption === 'excellent'} onChange={this.handleOptionChange} />
+              checked={this.state.estimatedCredit === 'excellent'} onChange={this.handleOptionChange} />
             <label htmlFor='excellent'>Excellent</label>
           </div>
           <center>
