@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 class Modal extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       selectedOption: 'option1',
@@ -10,12 +10,13 @@ class Modal extends Component {
     this.handleOptionChange = this.handleOptionChange.bind(this)
   }
 
-  handleOptionChange(event) {
+  handleOptionChange (event) {
     this.setState({ selectedOption: event.target.value })
   }
 
-  render() {
+  render () {
     return (
+<<<<<<< HEAD
       <div className="modal">
         <i className="material-icons" onClick={this.props.handleModalButton}>clear</i>
         <div id="modal-content">
@@ -57,6 +58,20 @@ class Modal extends Component {
               SUBMIT
           </button>
           </center>
+=======
+      <div className='modal'>
+        <i className='material-icons' onClick={this.props.handleModalButton}>clear</i>
+        <div id='modal-content'>
+          <div className='question'>
+            <p>Are you looking for a new card?</p>
+            <label for='yes'>Yes</label>
+            <input type='radio' name='yes' value='option1'
+              checked={this.state.selectedOption === 'option1'} onChange={this.handleOptionChange} />
+            <label for='no'>No</label>
+            <input type='radio' name='no' value='option2'
+              checked={this.state.selectedOption === 'option2'} onChange={this.handleOptionChange} />
+          </div>
+>>>>>>> afe0ebb2b005898c24c13811c0122914495d6b09
         </div>
       </div>
     )

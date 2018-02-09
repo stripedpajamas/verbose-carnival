@@ -14,6 +14,10 @@ app.prepare()
       res.send({ creditScore })
     })
 
+    server.get('/complete', (req, res) => {
+      res.redirect('/')
+    })
+
     server.get('*', (req, res) => {
       return handle(req, res)
     })
