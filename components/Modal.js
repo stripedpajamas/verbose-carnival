@@ -50,7 +50,10 @@ class Modal extends Component {
             <label for="medium">Medium</label>
             <input type="radio" name="high" value="option3"
               checked={this.state.selectedOption === 'option3'} onChange={this.handleOptionChange} />
-            <label for="high">High</label>
+            <label for="high">Good</label>
+            <input type="radio" name="excellent" value="option4"
+              checked={this.state.selectedOption === 'option4'} onChange={this.handleOptionChange} />
+            <label for="excellent">Excellent</label>
           </div>
           <center>
             <button className="button apply-button">
