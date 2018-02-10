@@ -56,14 +56,14 @@ class Modal extends Component {
           </div>
           <div className='modal-question'>
             <p>What do you think your credit score is?</p>
-            <input type='radio' name='low' value='low'
-              checked={this.state.estimatedCredit === 'low'} onChange={this.handleOptionChange} />
+            <input type='radio' name='poor' value='poor'
+              checked={this.state.estimatedCredit === 'poor'} onChange={this.handleOptionChange} />
             <label htmlFor='low'>Low</label>
             <input type='radio' name='medium' value='medium'
               checked={this.state.estimatedCredit === 'medium'} onChange={this.handleOptionChange} />
             <label htmlFor='medium'>Medium</label>
-            <input type='radio' name='high' value='high'
-              checked={this.state.estimatedCredit === 'high'} onChange={this.handleOptionChange} />
+            <input type='radio' name='good' value='good'
+              checked={this.state.estimatedCredit === 'good'} onChange={this.handleOptionChange} />
             <label htmlFor='high'>Good</label>
             <input type='radio' name='excellent' value='excellent'
               checked={this.state.estimatedCredit === 'excellent'} onChange={this.handleOptionChange} />
