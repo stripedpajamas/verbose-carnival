@@ -13,19 +13,19 @@ export default class ApplyForm extends Component {
       state: '',
       zipcode: '',
       ssn: '',
-      formFilled: false
+      formValid: false
     }
 
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleApplyButton = this.handleApplyButton.bind(this)
-    this.formValid = this.formValid.bind(this)
+    this.validateForm = this.validateForm.bind(this)
   }
 
   handleInputChange (e) {
     const id = e.target.id
     const value = e.target.value
     this.setState({ [id]: value })
-    this.formValid()
+    this.validateForm()
   }
 
   handleApplyButton (e) {
@@ -34,7 +34,7 @@ export default class ApplyForm extends Component {
     this.props.handleSubmit(form)
   }
 
-  formValid() {
+  validateForm() {
     const valid =
       this.state.firstName !== '' &&
       this.state.lastName !== '' &&
@@ -45,9 +45,9 @@ export default class ApplyForm extends Component {
       this.state.zipcode.length === 5 &&
       this.state.ssn.length === 8
     if (valid) {
-      this.setState({ formFilled: true })
+      this.setState({ formValid: true })
     } else {
-      this.setState({ formFilled: false })
+      this.setState({ formValid: false })
     }
   }
 
@@ -214,7 +214,7 @@ export default class ApplyForm extends Component {
           </div>
         </div>
         <center>
-          {this.state.formFilled ? (
+          {this.state.formValid ? (
             <button className='button apply-button' onClick={this.handleApplyButton}>SUBMIT</button>
           ) : (
             <button className='button apply-button disabled' disabled>SUBMIT</button>
