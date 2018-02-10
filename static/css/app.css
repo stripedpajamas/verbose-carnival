@@ -40,6 +40,14 @@ a {
     background-color: #FFC107;
 }
 
+button.disabled {
+    background-color: #BDBDBD;
+}
+
+button.disabled:hover {
+    background-color: #BDBDBD;
+}
+
 /* --------------- Header ---------------- */
 #nav {
     background-color:  #FFD54F;
@@ -350,17 +358,17 @@ footer > p {
     text-align: center;
 }
 .success > h1 {
-    margin: 50px;
-    color: green;
+    width: 100%;
+    margin: 50px 0;
+    padding: 5px 0;
+    background-color: rgb(177, 221, 177);
+    color: white;
 }
-
 .success > p {
     margin-bottom: 200px;
 }
-
 /* --------------- Failure --------------- */
 .fail > h1 {
-    color: red;
     margin: 100px 0;
     text-align: center;
 }
