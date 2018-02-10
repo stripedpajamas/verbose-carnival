@@ -12,10 +12,18 @@ class Modal extends Component {
 
     this.handleSubmitButton = this.handleSubmitButton.bind(this)
     this.handleOptionChange = this.handleOptionChange.bind(this)
+    this.handCheck = this.handCheck.bind(this)
   }
 
   handleOptionChange (e) {
     this.setState({ estimatedCredit: e.target.value })
+  }
+
+  handCheck (e) {
+    const newState = {}
+    const id = e.target.id
+    newState[id] = !this.state[id]
+    this.setState(newState)
   }
 
   handleSubmitButton () {
@@ -28,24 +36,24 @@ class Modal extends Component {
       <div className='modal'>
         <i className='material-icons' onClick={this.props.handleModalButton}>clear</i>
         <div id='modal-content'>
-          <div className='rewards'>
+          <div className='modal-question'>
             <p>What type of reward(s) are you interested in?</p>
             <ul>
               <li >
-                <input id='apr' type='checkbox' value={this.state.apr} />
+                <input id='apr' type='checkbox' value={this.state.apr} onChange={this.handCheck} />
                 <label htmlFor='apr'>0% Intro APR</label>
               </li>
               <li>
-                <input id='travel' type='checkbox' value={this.state.travel} />
+                <input id='travel' type='checkbox' value={this.state.travel} onChange={this.handCheck} />
                 <label htmlFor='travel'>Travel and Airlines</label>
               </li>
               <li>
-                <input id='cashback' type='checkbox' value={this.state.cashback} />
+                <input id='cashback' type='checkbox' value={this.state.cashback} onChange={this.handCheck} />
                 <label htmlFor='cashback'>Cash Back</label>
               </li>
             </ul>
           </div>
-          <div className='credit-question'>
+          <div className='modal-question'>
             <p>What do you think your credit score is?</p>
             <input type='radio' name='low' value='low'
               checked={this.state.estimatedCredit === 'low'} onChange={this.handleOptionChange} />
