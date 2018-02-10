@@ -7,27 +7,48 @@ export default class ApplyForm extends Component {
     this.state = {
       firstName: '',
       lastName: '',
+      email: '',
       address: '',
       city: '',
       state: '',
       zipcode: '',
-      ssn: ''
+      ssn: '',
+      formFilled: false
     }
 
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleApplyButton = this.handleApplyButton.bind(this)
+    this.formValid = this.formValid.bind(this)
   }
 
   handleInputChange (e) {
     const id = e.target.id
     const value = e.target.value
     this.setState({ [id]: value })
+    this.formValid()
   }
 
   handleApplyButton (e) {
     e.preventDefault()
     const form = Object.assign({}, this.state)
     this.props.handleSubmit(form)
+  }
+
+  formValid() {
+    const valid =
+      this.state.firstName !== '' &&
+      this.state.lastName !== '' &&
+      this.state.email !== '' &&
+      this.state.address !== '' &&
+      this.state.city !== '' &&
+      this.state.state !== '' &&
+      this.state.zipcode.length === 5 &&
+      this.state.ssn.length === 8
+    if (valid) {
+      this.setState({ formFilled: true })
+    } else {
+      this.setState({ formFilled: false })
+    }
   }
 
   render () {
@@ -60,6 +81,19 @@ export default class ApplyForm extends Component {
           </div>
         </div>
         <div className='flex-container'>
+          <div className='control-label'>Email</div>
+          <div>
+            <input
+              className='input-item'
+              onChange={this.handleInputChange}
+              value={this.state.email}
+              type='text'
+              id='email'
+              name='email'
+              required />
+          </div>
+        </div>
+        <div className='flex-container'>
           <div className='control-label'>Address</div>
           <div>
             <input
@@ -88,7 +122,7 @@ export default class ApplyForm extends Component {
         </div>
 
         <div className='flex-container'>
-          <div className='control-label'>States</div>
+          <div className='control-label'>State</div>
           <select
             onChange={this.handleInputChange}
             value={this.state.state}
@@ -172,7 +206,6 @@ export default class ApplyForm extends Component {
               value={this.state.ssn}
               className='input-item'
               type='password'
-              pattern='[0-9]{9}'
               id='ssn'
               name='ssn'
               maxLength='9'
@@ -181,9 +214,11 @@ export default class ApplyForm extends Component {
           </div>
         </div>
         <center>
-          <button className='button apply-button' onClick={this.handleApplyButton}>
-            SUBMIT
-          </button>
+          {this.state.formFilled ? (
+            <button className='button apply-button' onClick={this.handleApplyButton}>SUBMIT</button>
+          ) : (
+            <button className='button apply-button disabled' disabled>SUBMIT</button>
+          )}
         </center>
       </form >
     )
