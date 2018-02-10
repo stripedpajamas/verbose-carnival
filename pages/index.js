@@ -31,6 +31,7 @@ class Index extends Component {
 
   handleModalSubmission (results) {
     // turn results into a filtered list of cards
+    alert(JSON.stringify(results, null, 10))
   }
 
   render () {
