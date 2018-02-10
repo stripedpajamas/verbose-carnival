@@ -134,24 +134,31 @@ a {
     margin: 5% auto 0 auto;
 }
 
-.rewards {
-  padding: 10px;
-  font-size: 24px;
+.modal-question {
+    padding: 40px;
+    background-color: #FAFAFA;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
-.credit-question{
-  padding: 20px;
-  font-size: 24px;
+
+.modal-question > p {
+    margin-bottom: 10px;
 }
-.credit-question label {
-  padding: 10px;
+
+.modal-question > ul {
+    list-style-type: none;
 }
-.rewards ul {
-  list-style-type: none;
-  padding: 10px;
- }
-.rewards li {
-  margin-bottom: 10px;
-  font-size: 24px;  
+
+.modal-question > input {
+    margin: 0 5px 0 10px;
+}
+
+.modal-question > ul > li > input {
+    margin-top: 10px;
+}
+
+.modal-question > ul > li > label {
+    margin-left: 10px;
 }
 /* --------------- CardBar --------------- */
 .cards-section {
