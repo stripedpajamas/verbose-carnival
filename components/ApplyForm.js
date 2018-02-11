@@ -43,7 +43,7 @@ export default class ApplyForm extends Component {
       this.state.city !== '' &&
       this.state.state !== '' &&
       this.state.zipcode.length === 5 &&
-      this.state.ssn.length === 8
+      this.state.ssn.length === 9
     if (valid) {
       this.setState({ formValid: true })
     } else {
