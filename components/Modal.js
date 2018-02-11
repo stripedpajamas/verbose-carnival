@@ -5,9 +5,11 @@ class Modal extends Component {
     super(props)
     this.state = {
       estimatedCredit: 'good',
-      apr: false,
-      travel: false,
-      cashback: false
+      features: {
+        apr: false,
+        travel: false,
+        'cash back': false
+      }
     }
 
     this.handleSubmitButton = this.handleSubmitButton.bind(this)
@@ -19,16 +21,17 @@ class Modal extends Component {
     this.setState({ estimatedCredit: e.target.value })
   }
 
-  handleCheck (e) {
-    const newState = {}
-    const id = e.target.id
-    newState[id] = !this.state[id]
-    this.setState(newState)
+  handleCheck (id) {
+    this.setState((prevState) => ({
+      features: {
+        ...prevState.features,
+        [id]: !prevState[id]
+      }
+    }))
   }
 
   handleSubmitButton () {
     const results = Object.assign({}, this.state)
-    this.props.handleModalButton()
     this.props.handleModalSubmission(results)
   }
 
@@ -41,31 +44,31 @@ class Modal extends Component {
             <p>What type of reward(s) are you interested in?</p>
             <ul>
               <li >
-                <input id='apr' type='checkbox' value={this.state.apr} onChange={this.handleCheck} />
+                <input id='apr' type='checkbox' checked={this.state.features.apr} onChange={() => this.handleCheck('apr')} />
                 <label htmlFor='apr'>0% Intro APR</label>
               </li>
               <li>
-                <input id='travel' type='checkbox' value={this.state.travel} onChange={this.handleCheck} />
+                <input id='travel' type='checkbox' checked={this.state.features.travel} onChange={() => this.handleCheck('travel')} />
                 <label htmlFor='travel'>Travel and Airlines</label>
               </li>
               <li>
-                <input id='cashback' type='checkbox' value={this.state.cashback} onChange={this.handleCheck} />
+                <input id='cashback' type='checkbox' checked={this.state.features['cash back']} onChange={() => this.handleCheck('cash back')} />
                 <label htmlFor='cashback'>Cash Back</label>
               </li>
             </ul>
           </div>
           <div className='modal-question'>
             <p>What do you think your credit score is?</p>
-            <input type='radio' name='poor' value='poor'
+            <input type='radio' id='poor' name='poor' value='poor'
               checked={this.state.estimatedCredit === 'poor'} onChange={this.handleOptionChange} />
             <label htmlFor='low'>Low</label>
-            <input type='radio' name='medium' value='medium'
+            <input type='radio' id='medium' name='medium' value='medium'
               checked={this.state.estimatedCredit === 'medium'} onChange={this.handleOptionChange} />
             <label htmlFor='medium'>Medium</label>
-            <input type='radio' name='good' value='good'
+            <input type='radio' id='good' name='good' value='good'
               checked={this.state.estimatedCredit === 'good'} onChange={this.handleOptionChange} />
-            <label htmlFor='high'>Good</label>
-            <input type='radio' name='excellent' value='excellent'
+            <label htmlFor='good'>Good</label>
+            <input type='radio' id='excellent' name='excellent' value='excellent'
               checked={this.state.estimatedCredit === 'excellent'} onChange={this.handleOptionChange} />
             <label htmlFor='excellent'>Excellent</label>
           </div>
