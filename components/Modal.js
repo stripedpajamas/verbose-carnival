@@ -25,7 +25,7 @@ class Modal extends Component {
     this.setState((prevState) => ({
       features: {
         ...prevState.features,
-        [id]: !prevState[id]
+        [id]: !prevState.features[id]
       }
     }))
   }
