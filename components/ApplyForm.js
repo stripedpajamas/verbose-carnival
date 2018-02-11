@@ -43,7 +43,7 @@ export default class ApplyForm extends Component {
       this.state.city !== '' &&
       this.state.state !== '' &&
       this.state.zipcode.length === 5 &&
-      this.state.ssn.length === 9
+      this.state.ssn.length === 8
     if (valid) {
       this.setState({ formValid: true })
     } else {
@@ -209,6 +209,7 @@ export default class ApplyForm extends Component {
               id='ssn'
               name='ssn'
               maxLength='9'
+              pattern ='[0-9]{9}'
               title='Please enter 9-digits SSN'
               required />
           </div>
