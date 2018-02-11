@@ -34,7 +34,7 @@ export default class ApplyForm extends Component {
     this.props.handleSubmit(form)
   }
 
-  validateForm() {
+  validateForm () {
     const valid =
       this.state.firstName !== '' &&
       this.state.lastName !== '' &&

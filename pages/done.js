@@ -6,7 +6,7 @@ import Failure from '../components/Failure'
 const Done = (props) => (
   <Layout>
     {props.qualified && <Success card={props.appliedCard} name={props.name} />}
-    {!props.qualified && <Failure card={props.appliedCard} cards={props.possibleCards} name={props.name}/>}
+    {!props.qualified && <Failure card={props.appliedCard} cards={props.possibleCards} name={props.name} />}
   </Layout>
 )
 
