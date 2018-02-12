@@ -14,14 +14,14 @@ Done.getInitialProps = async (context) => {
   const name = context.query.name
   const appliedCardId = context.query.id
   const creditScore = parseInt(context.query.creditScore, 10)
-  const qualified = JSON.parse(context.query.qualified)
+  const success = JSON.parse(context.query.success)
 
   const res = await fetch('https://techcase-cards-api.herokuapp.com/api/v1/cards')
   const data = await res.json()
 
   let possibleCards
 
-  if (!qualified) {
+  if (!success) {
     possibleCards = data.filter((card) => {
       let lowestRecommendedScore = 850
       card.recommended_credit_scores.forEach((group) => {
@@ -35,7 +35,7 @@ Done.getInitialProps = async (context) => {
     appliedCard: data.find(card => card.id === appliedCardId),
     possibleCards,
     creditScore,
-    qualified,
+    success,
     name
   }
 }
