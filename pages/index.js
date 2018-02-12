@@ -6,7 +6,7 @@ import Modal from '../components/Modal'
 import CardBar from '../components/CardBar'
 import Hero from '../components/Hero'
 
-const creditLevels = ['high', 'good', 'medium', 'poor']
+const creditLevels = ['excellent', 'good', 'medium', 'poor']
 class Index extends Component {
   constructor (props) {
     super(props)
