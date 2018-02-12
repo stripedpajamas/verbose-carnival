@@ -6,9 +6,10 @@ class Modal extends Component {
     this.state = {
       estimatedCredit: 'good',
       features: {
-        apr: false,
+        no_annual_fee: false,
+        zero_intro_apr: false,
         travel: false,
-        'cash back': false
+        cashback: false
       }
     }
 
@@ -44,15 +45,19 @@ class Modal extends Component {
             <p>What type of reward(s) are you interested in?</p>
             <ul>
               <li >
-                <input id='apr' type='checkbox' checked={this.state.features.apr} onChange={() => this.handleCheck('apr')} />
+                <input id='apr' type='checkbox' checked={this.state.features.zero_intro_apr} onChange={() => this.handleCheck('zero_intro_apr')} />
                 <label htmlFor='apr'>0% Intro APR</label>
+              </li>
+              <li >
+                <input id='annual' type='checkbox' checked={this.state.features.no_annual_fee} onChange={() => this.handleCheck('no_annual_fee')} />
+                <label htmlFor='annual'>No Annual Fee</label>
               </li>
               <li>
                 <input id='travel' type='checkbox' checked={this.state.features.travel} onChange={() => this.handleCheck('travel')} />
                 <label htmlFor='travel'>Travel and Airlines</label>
               </li>
               <li>
-                <input id='cashback' type='checkbox' checked={this.state.features['cash back']} onChange={() => this.handleCheck('cash back')} />
+                <input id='cashback' type='checkbox' checked={this.state.features.cashback} onChange={() => this.handleCheck('cashback')} />
                 <label htmlFor='cashback'>Cash Back</label>
               </li>
             </ul>
