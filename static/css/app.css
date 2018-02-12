@@ -73,6 +73,7 @@ button.disabled:hover {
     float: right;
 }
 .main-nav li a {
+    color: white;
     display: block;
     padding: 25px;
     margin: 0 5px;
