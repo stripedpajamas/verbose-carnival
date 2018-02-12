@@ -17,25 +17,27 @@ export default class Apply extends Component {
     const data = await res.json()
     const card = data.card
 
-    let lowestRecommendedScore = 850
-    card.recommended_credit_scores.forEach((group) => {
-      if (group.min < lowestRecommendedScore) lowestRecommendedScore = group.min
-    })
-
-    return {
-      card,
-      lowestRecommendedScore
-    }
+    return { card }
   }
 
   async handleSubmit (formData) {
-    const res = await fetch('/api/creditCheck')
-    const creditScoreRes = await res.json()
-    const creditScore = creditScoreRes.creditScore
-    const qualified = creditScore >= this.props.lowestRecommendedScore
-    const name = `${formData.firstName} ${formData.lastName}`
     const id = this.props.card.id
-    Router.push(`/done?qualified=${qualified}&creditScore=${creditScore}&id=${id}&name=${name}`,
+    const creditScoreRaw = await fetch('/api/creditCheck', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: formData
+    })
+    const creditScoreRes = await creditScoreRaw.json()
+    const creditScore = creditScoreRes.creditScore
+    const applicationResultRaw = await fetch(`https://techcase-cards-api.herokuapp.com/api/v1/cards/${id}/apply`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: { creditScore }
+    })
+    const applicationResult = await applicationResultRaw.json()
+    const success = applicationResult.success
+    const name = `${formData.firstName} ${formData.lastName}`
+    Router.push(`/done?success=${success}&creditScore=${creditScore}&id=${id}&name=${name}`,
       '/complete')
   }
 
